@@ -91,6 +91,9 @@ Sample User Logins
 admin@example.com (Admin)
 123456
 
+Abhigrace2000@gmail.com (Customer)
+Rajee_1968
+
 john@example.com (Customer)
 123456
 
