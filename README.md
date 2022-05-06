@@ -4,7 +4,8 @@
 
 
 
-![screenshot](https://github.com/bradtraversy/proshop_mern/blob/master/uploads/Screen%20Shot%202020-09-29%20at%205.50.52%20PM.png)
+![image](https://user-images.githubusercontent.com/94125348/167063365-651e2456-21b8-4d70-8e7f-97d0fd035613.png)
+
 
 ## Features
 
