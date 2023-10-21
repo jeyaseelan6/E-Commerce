@@ -37,6 +37,7 @@ const LoginScreen = ({ location, history }) => {
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
+        <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/>
           <Form.Control
             type='email'
             placeholder='Enter email'
@@ -47,6 +48,7 @@ const LoginScreen = ({ location, history }) => {
 
         <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
+              <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/>
           <Form.Control
             type='password'
             placeholder='Enter password'
