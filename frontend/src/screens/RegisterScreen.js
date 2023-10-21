@@ -45,6 +45,7 @@ const RegisterScreen = ({ location, history }) => {
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
           <Form.Label>Name</Form.Label>
+        <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/> 
           <Form.Control
             type='name'
             placeholder='Enter name'
@@ -55,6 +56,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
+              <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/>
           <Form.Control
             type='email'
             placeholder='Enter email'
@@ -65,6 +67,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
+              <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/>
           <Form.Control
             type='password'
             placeholder='Enter password'
@@ -75,6 +78,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId='confirmPassword'>
           <Form.Label>Confirm Password</Form.Label>
+              <input type="hidden" name="_csrf" value = "{req.cookies['XSRF-TOKEN']}/>
           <Form.Control
             type='password'
             placeholder='Confirm password'
