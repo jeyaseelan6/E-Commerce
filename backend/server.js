@@ -16,13 +16,16 @@ dotenv.config()
 connectDB()
 
 const app = express()
+const csurf = require('csurf'); //CSRF vulnerability fixing code
+const csrfMiddleware = csurf({cookie:true}); //CSRF vulnerability fixing code
+
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
 app.use(express.json())
-
+app.use(csrfMiddleware); ////CSRF vulnerability fixing code
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
@@ -43,9 +46,12 @@ if (process.env.NODE_ENV === 'production') {
   )
 } else {
   app.get('/', (req, res) => {
+    res.cookie('XSRF-TOKEN',req.csrfToken()); //CSRF vulnerability fixing code
     res.send('API is running....')
   })
 }
+
+
 
 app.use(notFound)
 app.use(errorHandler)
