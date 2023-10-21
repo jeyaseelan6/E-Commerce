@@ -51,7 +51,11 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-
+//Disabled the "Server" HTTP response header field in the Node.js server.
+app.use((req,res,next) => {
+  res.setHeader('Server',"");
+  next();
+});
 
 app.use(notFound)
 app.use(errorHandler)
